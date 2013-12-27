@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>fidelitas</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div><h1>Hallo Fidelitas</h1></div>
-    <div>topleft</div>
-    <div>topright</div>
-    <div>bottomleft</div>
-    <div>bottomright</div>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+        <title>Fidelitas Tag Reader</title>
+    </head>
+    <body> <!-- ng-app="fidelitas" ng-cloak -->
+        <div ng-view></div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/angular.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
 </html>
