@@ -5,8 +5,6 @@
         versionCode = "1" 
         version     = "0.0.1" >
 
-    <!-- versionCode is optional and Android only -->
-
     <name>Fidelitas Open</name>
 
     <description>
