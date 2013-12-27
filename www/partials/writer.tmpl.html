@@ -1,0 +1,24 @@
+<div ng-controller="WriterCtrl">
+    <h1>Writer</h1>
+    <form id="writer">
+        <div class="bigger">
+            <input type="text" list="tags"
+                   autofocus placeholder="tag type..."
+                   pattern="^[A-Z]{2}$" required
+                   ng-model="tagType">
+            <datalist id="tags">
+                <option value="PV">
+                <option value="TU">
+                <option value="MA">
+            </datalist>
+        </div>
+        <input type="tel" placeholder="00000" pattern="^[0-9]{5}$" required ng-model="number"
+               size="5" class="big">
+
+        <br>
+        <p>{{ tagType }}:{{ number }}</p>
+        <input type="submit" ng-click="writeTag()" value="schreibe Tag" class="big">
+        <p>{{ textArea }}</p>
+    </form>
+    <div class="bottomleft"><a href="#">zurück</a></div>
+</div>

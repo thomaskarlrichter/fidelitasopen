@@ -1,0 +1,30 @@
+<div ng-controller="ConfigCtrl">
+    <form action=""><h1>Config</h1>
+         <div>
+            <label for="color" class="button-width">working:</label>
+            <input type="checkbox"
+                   name="working"
+                   id="color"
+                   ng-model="config.working" class="big button-width"/>
+        </div>
+        <div>
+            <label for="handynummer" class="button-width">Handynummer:</label>
+            <input type="text"
+                   name="handynummer"
+                   id="handynummer"
+                   ng-model="config.phone" class="big button-width"/>
+        </div>
+        <div>
+            <label for="server" class="button-width">Server URL:</label>
+            <input type="text"
+                   name="server"
+                   id="server"
+                   class="big button-width"
+                   ng-model="config.serveradress"/>
+        </div>
+        <div>
+            <button ng-click="save()" class="big button-width">Save</button>
+        </div>
+    </form>
+    <div class="bottomleft"><a href="#">zurück</a></div>
+</div>
