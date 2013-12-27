@@ -15,6 +15,9 @@
         Thomas Richter 
     </author>
     
+    <access origin="http://appspot.com" subdomains="true" />
+    
     <gap:platform name="android" />
     <gap:plugin name="com.chariotsolutions.nfc.plugin" />
+    
 </widget>
