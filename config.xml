@@ -10,12 +10,13 @@
     <name>Fidleitas Open</name>
 
     <description>
-        Exampole for Phonegap. 
+        Example for Fidelitas
     </description>
 
     <author href="https://www.xing.com/profiles/Thomas_Richter" email="thomas.karl.richter@gmail.com">
         Thomas Richter 
     </author>
+    
     <gap:platform name="android" />
     <gap:plugin name="com.chariotsolutions.nfc.plugin" />
 </widget>
