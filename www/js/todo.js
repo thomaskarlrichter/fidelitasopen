@@ -121,7 +121,7 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                                 "ty": type,
                                 "ma": config.ma_nr,
                                 "nu": config.number,
-                                "ts": fmt.format(new Date()),
+                                "ts": "111", //fmt.format(new Date()),
                                 "ph": "xxx"
 
                             };
