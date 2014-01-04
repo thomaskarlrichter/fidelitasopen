@@ -141,8 +141,10 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                             //that.name = "fidelitas";
                             config.message = "waiting...";
                             //tagreader.saveTag(postdata);
+                            
+                            // TODO liefert 200 obwohl dei url gar nicht existiert
                             $http.get("http://xnfcserver-hrd.appspot.com/tag")
-                               .success(function(data, status){ config.message = "Myx"+status;})
+                               .success(function(data, status){ config.message = data;})
                                .error(function(data, status){
                                    config.message = status;
                                });
