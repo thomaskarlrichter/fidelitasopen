@@ -135,7 +135,7 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                                 "ph": device.uuid
 
                             };
-                            config.massage = "waiting...";
+                            config.message = "waiting...";
                             //tagreader.saveTag(postdata);
                             $http({
                                 method: 'POST',
