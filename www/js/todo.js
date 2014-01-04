@@ -107,14 +107,14 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
         getNfc: cordovaReady(function (onSuccess, onError) {
                 nfc.addNdefListener(
                     function (nfcEvent) {
-                        alert("Event kommt rein!!!!!");
+                        //alert("Event kommt rein!!!!!");
                         var type, number, postdata;
                         var tag = nfcEvent.tag,
                             ndefMessage = tag.ndefMessage;
                         if (nfc.bytesToString(ndefMessage[0].type) === 'tcg:1') {
                             type = nfc.bytesToString(ndefMessage[0].id);
                             number = nfc.bytesToString(ndefMessage[0].payload);
-                            config.phone = "01771234567";
+                            config.phone = "0177xxx";
                             config.number = number;
                             config.ty = type;
                             if (type === "MA") {
@@ -138,7 +138,7 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                             tagreader.saveTag(postdata);
                             $http({
                                 method: 'POST',
-                                url: this.config.serveradress + "/tag",
+                                url: config.serveradress + "/tag",
                                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                                 // TODO hier function umwickeln
                                 transformRequest: function (obj) {
