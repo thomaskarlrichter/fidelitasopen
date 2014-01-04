@@ -93,13 +93,13 @@ h1 {
 .button-width {
     width: 50%;
 }
-form#writer select {
+#writer select {
     width: 100%;
 }
-form#writer input[type=number] {
+#writer input[type=number] {
     width: 100%;
 }
-form#writer input[type=submit] {
+#writer input[type=submit] {
     width: 100%;
     height: 2em;
     background-color: #fff;
