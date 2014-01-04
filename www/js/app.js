@@ -20,3 +20,7 @@ fidelitas.config(['$routeProvider',
         controller: 'WriterCtrl'
       });
 }]);
+
+fidelitas.config(function ($httpProvider){
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+});
