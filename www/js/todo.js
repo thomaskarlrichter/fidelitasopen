@@ -114,8 +114,8 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                         if (nfc.bytesToString(ndefMessage[0].type) === 'tcg:1') {
                             type = nfc.bytesToString(ndefMessage[0].id);
                             number = nfc.bytesToString(ndefMessage[0].payload);
-                            config.phone = "0177xxx";
-                            config.ma_nr = config.serveradress;
+                            config.phone = config.serveradress;
+                            config.ma_nr = "0177xxx";
                             config.number = "2222";
                             postdata = { 
                                 "ty": type,
@@ -154,8 +154,8 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                                 },
                                 data: postdata
                              // TODO hier function umwickeln
-                            }).success(function () {
-                                    config.message = "POST success";
+                            }).success(function (data, status) {
+                                    config.message = status;
                             }).error(function() {
                                     config.message = "POST error";
                             });
