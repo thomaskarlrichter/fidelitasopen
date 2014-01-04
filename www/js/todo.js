@@ -107,7 +107,6 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
         getNfc: cordovaReady(function (onSuccess, onError) {
                 nfc.addNdefListener(
                     function (nfcEvent) {
-                        config.message = "vor alert";
                         alert("Event kommt rein!!!!!");
                         var type, number, postdata;
                         var tag = nfcEvent.tag,
@@ -116,6 +115,7 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                             type = nfc.bytesToString(ndefMessage[0].id);
                             number = nfc.bytesToString(ndefMessage[0].payload);
                             config.phone = "0177xxx";
+                            config.message = "nach alert";
                             config.number = number;
                             config.ty = type;
                             if (type === "MA") {
