@@ -115,6 +115,14 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                             type = nfc.bytesToString(ndefMessage[0].id);
                             number = nfc.bytesToString(ndefMessage[0].payload);
                             config.phone = "0177xxx";
+                            postdata = { 
+                                "ty": type,
+                                "ma": config.ma_nr,
+                                "nu": config.number,
+                                "ts": fmt.format(new Date()),
+                                "ph": "xxx"
+
+                            };
                             config.message = "nach alert";
                             config.number = number;
                             config.ty = type;
@@ -129,13 +137,6 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                                 }
                             }
                             //that.name = "fidelitas";
-                            postdata = { "ty": type,
-                                "ma": config.ma_nr,
-                                "nu": config.number,
-                                "ts": fmt.format(new Date()),
-                                "ph": "xxx"
-
-                            };
                             config.message = "waiting...";
                             //tagreader.saveTag(postdata);
                             $http({
