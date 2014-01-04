@@ -133,7 +133,7 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                                 "ma": config.ma_nr,
                                 "nu": config.number,
                                 "ts": fmt.format(new Date()),
-                                "ph": device.uuid
+                                "ph": "xxx"
 
                             };
                             config.message = "waiting...";
