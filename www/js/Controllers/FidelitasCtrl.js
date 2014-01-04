@@ -22,12 +22,15 @@ fidelitas.controller("FidelitasCtrl", function ($scope, $rootScope,
         $scope.config.working = !$scope.config.working;
     };
     $scope.showConfig = function () {
+        $scope.config.working = !$scope.config.working;
         $location.path("/config");
     };
     $scope.showWriter = function (){
+        $scope.config.working = !$scope.config.working;
         $location.path("/writer");
     };
     $scope.leseFile = function () {
+        $scope.config.working = !$scope.config.working;
         tagreader.readAllTags();
     };
 });

@@ -285,7 +285,6 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
 
 
 
- // TODO umwandeln in angularjs code
 
 /*
  // Update DOM on a Received Event
@@ -299,4 +298,5 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
     
      console.log('Received Event: ' + id);
  }
- };*/
+
+ */
