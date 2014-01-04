@@ -121,7 +121,7 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                                 "ty": type,
                                 "ma": config.ma_nr,
                                 "nu": config.number,
-                                "ts": "111", //fmt.format(new Date()),
+                                "ts": fmt.format(new Date()),
                                 "ph": "xxx"
 
                             };
@@ -142,13 +142,7 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                             config.message = "waiting...";
                             //tagreader.saveTag(postdata);
                             
-                            // TODO liefert 200 obwohl dei url gar nicht existiert
-                            $http.get("http://xnfcserver-hrd.appspot.com/tag")
-                               .success(function(data, status){ config.message = data;})
-                               .error(function(data, status){
-                                   config.message = status;
-                               });
-                            /*$http({
+                            $http({
                                 method: 'POST',
                                 url: config.serveradress + "/tag",
                                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
@@ -166,7 +160,7 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                             }).error(function() {
                                     config.message = "POST error";
                             });
-                            */
+                            
                         }
                     },
                     // TODO ???
