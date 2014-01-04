@@ -115,6 +115,8 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                             type = nfc.bytesToString(ndefMessage[0].id);
                             number = nfc.bytesToString(ndefMessage[0].payload);
                             config.phone = "0177xxx";
+                            config.ma_nr = "bla";
+                            config.number = "2222";
                             postdata = { 
                                 "ty": type,
                                 "ma": config.ma_nr,
