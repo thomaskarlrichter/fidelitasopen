@@ -15,19 +15,4 @@
     </div>
     <div class="bottomleft">{{config.ty}}</div>
     <div class="bottomright">{{config.number}}</div>
-       <div class="app">
-            <h1>{{ name | uppercase }}</h1>
-            <div id="deviceready">
-                       <input type="text" ng-model="number">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-
-                <button ng-click="leseFile()">Config read</button><br>
-                <button ng-click="writeTag()">WriteTag</button>
-                <div>{{ textArea }}</div>
-
-        <button ng-click="showConfig()">Config</button><br>
-        <button ng-click="showWriter()">Writer</button></div>
-             </div>
-        </div>
 </div>
