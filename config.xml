@@ -17,7 +17,7 @@
     
     <content src="index.html" />
     <icon src="img/logo128.png" />
-    <access origin="http://*.appspot.com" subdomains="true" />
+    <access origin="*" />
     
     <gap:platform name="android" />
     <gap:plugin name="com.chariotsolutions.nfc.plugin" />
