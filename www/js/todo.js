@@ -141,8 +141,8 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                             //that.name = "fidelitas";
                             config.message = "waiting...";
                             //tagreader.saveTag(postdata);
-                            $http.get("http://nfcserver-hrd.appspot.com/tag")
-                               .success(function(data, status){ config.message = "My"+status;})
+                            $http.get("http://xnfcserver-hrd.appspot.com/tag")
+                               .success(function(data, status){ config.message = "Myx"+status;})
                                .error(function(data, status){
                                    config.message = status;
                                });
