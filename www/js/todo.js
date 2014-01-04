@@ -135,7 +135,8 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                                 "ph": device.uuid
 
                             };
-                            tagreader.saveTag(postdata);
+                            config.massage = "waiting...";
+                            //tagreader.saveTag(postdata);
                             $http({
                                 method: 'POST',
                                 url: config.serveradress + "/tag",
@@ -151,7 +152,9 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                              // TODO hier function umwickeln
                             }).success(function () {
                                     config.message = "POST success";
-                                });
+                            }).error(function() {
+                                    config.message = "POST error";
+                            });
                         }
                     },
                     // TODO ???
