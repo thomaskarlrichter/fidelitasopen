@@ -141,7 +141,11 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                             //that.name = "fidelitas";
                             config.message = "waiting...";
                             //tagreader.saveTag(postdata);
-                            $http.post(config.serveradress + "/tag","bla").success(function(data, status){ config.message = "My"+status;});
+                            $http.get(config.serveradress + "/tag")
+                               .success(function(data, status){ config.message = "My"+status;})
+                               .error(function(data, status){
+                                   config.message = status;
+                               });
                             /*$http({
                                 method: 'POST',
                                 url: config.serveradress + "/tag",
