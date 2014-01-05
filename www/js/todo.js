@@ -99,7 +99,7 @@ fidelitas.factory('config', function() {
  * Factory tagreader
  * TODO refactoring
  */
-fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaReady, $http) {
+fidelitas.factory('tagreader', function ($rootScope, $location, $window, config, cordovaReady, $http) {
     // TODO factoring ziel für fmt
 
     var tagreader = {
@@ -113,53 +113,56 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                             ndefMessage = tag.ndefMessage;
                         if (nfc.bytesToString(ndefMessage[0].type) === 'tcg:1') {
                             type = nfc.bytesToString(ndefMessage[0].id);
-                            number = nfc.bytesToString(ndefMessage[0].payload);
-                            config.phone = config.serveradress;
-                            config.ma_nr = "0177xxx";
-                            config.number = "2222";
-                            postdata = { 
-                                "ty": type,
-                                "ma": config.ma_nr,
-                                "nu": config.number,
-                                "ts": fmt.format(new Date()),
-                                "ph": "xxx"
-
-                            };
-                            config.message = "nach alert";
-                            config.number = number;
-                            config.ty = type;
-                            if (type === "MA") {
-                                if (config.ma_nr === "00000") {
-                                    config.ma_nr = number;
-                                    config.working = true;
-
-                                } else {
-                                    config.ma_nr = "00000";
-                                    config.working = false;
+                            if (type === "PV") {
+                                $location.path("/config");
+                            } else {
+                                number = nfc.bytesToString(ndefMessage[0].payload);
+                                config.phone = config.serveradress;
+                                config.ma_nr = "0177xxx";
+                                config.number = "2222";
+                                postdata = { 
+                                    "ty": type,
+                                    "ma": config.ma_nr,
+                                    "nu": config.number,
+                                    "ts": "1234", //fmt.format(new Date()),
+                                    "ph": "xxx"
+    
+                                };
+                                config.message = "nach alert";
+                                config.number = number;
+                                config.ty = type;
+                                if (type === "MA") {
+                                    if (config.ma_nr === "00000") {
+                                        config.ma_nr = number;
+                                        config.working = true;
+    
+                                    } else {
+                                        config.ma_nr = "00000";
+                                        config.working = false;
+                                    }
                                 }
+                                //that.name = "fidelitas";
+                                config.message = "waiting...";
+                                //tagreader.saveTag(postdata);
+                                
+                                $http({
+                                    method: 'POST',
+                                    url: config.serveradress + "/tag",
+                                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                                    transformRequest: function (obj) {
+                                        var str = [];
+                                        for (var p in obj)
+                                            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+                                        return str.join("&");
+                                    },
+                                    data: postdata
+                                 // TODO hier function umwickeln
+                                }).success(function (data, status) {
+                                        config.message = status;
+                                }).error(function() {
+                                        config.message = "POST error";
+                                });
                             }
-                            //that.name = "fidelitas";
-                            config.message = "waiting...";
-                            //tagreader.saveTag(postdata);
-                            
-                            $http({
-                                method: 'POST',
-                                url: config.serveradress + "/tag",
-                                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                                transformRequest: function (obj) {
-                                    var str = [];
-                                    for (var p in obj)
-                                        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-                                    return str.join("&");
-                                },
-                                data: postdata
-                             // TODO hier function umwickeln
-                            }).success(function (data, status) {
-                                    config.message = status;
-                            }).error(function() {
-                                    config.message = "POST error";
-                            });
-                            
                         }
                     },
                     // TODO ???
