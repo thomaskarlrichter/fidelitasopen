@@ -1,7 +1,8 @@
-/**
- * ConfigCtrl
- */
+
 fidelitas.controller("TestCtrl", function($scope, $http){
+    $scope.nr = "Bla";
+    $scope.ty = "Type";
+    $scope.time = "12.23.23";
     $scope.click = function(){
         var postdata = {
             "nr": $scope.nr,
