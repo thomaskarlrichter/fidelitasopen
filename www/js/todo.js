@@ -107,8 +107,8 @@ fidelitas.factory('tagreader', function ($rootScope, $location, $window, config,
         getNfc: cordovaReady(function (onSuccess, onError) {
                 nfc.addNdefListener(
                     function (nfcEvent) {
-                        var tsr = fmt.format(new Date());
-                        alert("alert "+ tsr);
+                        //var tsr = fmt.format(new Date());
+                        alert("alert ");
                         var type, number, postdata;
                         var tag = nfcEvent.tag,
                             ndefMessage = tag.ndefMessage;
