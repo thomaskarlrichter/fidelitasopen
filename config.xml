@@ -16,7 +16,7 @@
     </author>
     
     <content src="index.html" />
-    <icon src="img/logo128.png" />
+    <icon src="logo.png" />
     <access origin="*" />
     
     <gap:platform name="android" />
