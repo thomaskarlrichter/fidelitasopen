@@ -3,11 +3,11 @@ var fidelitas = angular.module("fidelitas", ['ngTouch', 'ngRoute']);
 fidelitas.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/fidelitas', {
+      when('/', {
         templateUrl: 'partials/test.tmpl.html',
         controller: 'TestCtrl'
       }).
-      when('/', {
+      when('/fidelitas', {
         templateUrl: 'partials/tag.tmpl.html',
         controller: 'FidelitasCtrl'
       }).
