@@ -115,7 +115,7 @@ fidelitas.factory('tagreader', function ($rootScope, $location, $window, config,
                             ndefMessage = tag.ndefMessage;
                         if (nfc.bytesToString(ndefMessage[0].type) === 'tcg:1') {
                             type = nfc.bytesToString(ndefMessage[0].id);
-                            if (type === "PV") {
+                            if (type === "XX") {
                                 $location.path("/config");
                             } else {
                                 number = nfc.bytesToString(ndefMessage[0].payload);
@@ -129,7 +129,7 @@ fidelitas.factory('tagreader', function ($rootScope, $location, $window, config,
                                 config.message = "nach alert";
                                 config.number = number;
                                 config.ty = type;
-                                if (type === "MA") {
+                                if (type === "PV") {
                                     if (config.ma_nr === "00000") {
                                         config.ma_nr = number;
                                         config.working = true;
