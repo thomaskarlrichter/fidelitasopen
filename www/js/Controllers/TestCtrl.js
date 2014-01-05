@@ -22,7 +22,7 @@ fidelitas.controller("TestCtrl", function($scope, $http){
             data: postdata
          // TODO hier function umwickeln
         }).success(function (data, status) {
-                $scope.message = status;
+                $scope.message = data+status;
         }).error(function() {
                 $scope.message = "POST error";
         });
