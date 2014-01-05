@@ -1,7 +1,6 @@
 fidelitas.controller("FidelitasCtrl", function ($scope, $rootScope, 
                                                 $window, $location, 
-                                                $timeout, config) {
-    $scope.config = config;
+                                                $timeout) {
     $scope.onTimeout = function() {
         var date = new Date();
         $scope.time = date.getHours()+":"+("0"+date.getMinutes()).slice(-2)+":"+("0"+date.getSeconds()).slice(-2);
@@ -10,7 +9,7 @@ fidelitas.controller("FidelitasCtrl", function ($scope, $rootScope,
     var mytimeaout = $timeout($scope.onTimeout, 0);
 
     $scope.shouldWork = function () {
-        return $scope.config.working;
+        return $rootScope.config.working;
     };
     $scope.klick = function () {
         $scope.config.working = !$scope.config.working;
