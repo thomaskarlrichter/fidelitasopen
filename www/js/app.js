@@ -24,7 +24,8 @@ fidelitas.config(['$routeProvider',
 fidelitas.config(function($httpProvider){
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 });
-fidelitas.config(function(cordovaReady, config){
+fidelitas.config(function(cordovaReady, config, $rootScope){
+    $rootScope.config = config;
     cordovaReady(function (onSuccess, onError) {
                 nfc.addNdefListener(
                     function (nfcEvent) {
