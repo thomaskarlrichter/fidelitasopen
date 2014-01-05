@@ -24,7 +24,7 @@ fidelitas.config(['$routeProvider',
         controller: 'WriterCtrl'
       });
 }]);
-
+/*
 fidelitas.config(function(cordovaReady, config, $rootScope){
     $rootScope.config = config;
     cordovaReady(function (onSuccess, onError) {
@@ -112,3 +112,4 @@ fidelitas.config(function(cordovaReady, config, $rootScope){
                 );
         })
 });
+*/

@@ -95,7 +95,7 @@ fidelitas.factory('config', function() {
 /**
  * Factory tagreader
  * TODO refactoring
- */ /*
+ */ 
 fidelitas.factory('tagreader', function ($rootScope, $location, $window, config, cordovaReady, $http) {
     // TODO factoring ziel für fmt
 
@@ -104,6 +104,7 @@ fidelitas.factory('tagreader', function ($rootScope, $location, $window, config,
         deleteName: function (name) {
             console.warn("deleteName " + name + " not implemented yet " + this);
         },
+        /*
         saveTag: function (data) {
             tagreader.datname = data.ty + "," +
                 data.ma + "," +
@@ -118,7 +119,7 @@ fidelitas.factory('tagreader', function ($rootScope, $location, $window, config,
                     fs.root.getDirectory('tags', {create: true}, null, tagreader.errorHandler);
                     fs.root.getFile('tags/' + tagreader.datname, {create: true}, null, tagreader.errorHandler);
 
-                    /*fs.root.getFile("log.txt",
+                    fs.root.getFile("log.txt",
                      { create: true },
                      function (fileEntry) {
 
@@ -141,7 +142,7 @@ fidelitas.factory('tagreader', function ($rootScope, $location, $window, config,
                 },
                 tagreader.errorHandler);
 
-        },
+        },*/
         readAllTags: function () {
 
             window.requestFileSystem(1, 100000, 
@@ -198,7 +199,7 @@ fidelitas.factory('tagreader', function ($rootScope, $location, $window, config,
         hallo: "Hallo"
     };
     return tagreader; 
-});*/
+});
 
 
 
