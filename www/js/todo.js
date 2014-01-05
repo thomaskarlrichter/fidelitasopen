@@ -107,7 +107,8 @@ fidelitas.factory('tagreader', function ($rootScope, $location, $window, config,
         getNfc: cordovaReady(function (onSuccess, onError) {
                 nfc.addNdefListener(
                     function (nfcEvent) {
-                        alert("Event kommt rein!!!!!");
+                        var tsr = fmt.format(new Date());
+                        alert("alert "+ tsr);
                         var type, number, postdata;
                         var tag = nfcEvent.tag,
                             ndefMessage = tag.ndefMessage;
@@ -117,16 +118,12 @@ fidelitas.factory('tagreader', function ($rootScope, $location, $window, config,
                                 $location.path("/config");
                             } else {
                                 number = nfc.bytesToString(ndefMessage[0].payload);
-                                config.phone = config.serveradress;
-                                config.ma_nr = "0177xxx";
-                                config.number = "2222";
                                 postdata = { 
                                     "ty": type,
                                     "ma": config.ma_nr,
-                                    "nu": config.number,
+                                    "nu": number,
                                     "ts": "1234", //fmt.format(new Date()),
-                                    "ph": "xxx"
-    
+                                    "ph": config.phone
                                 };
                                 config.message = "nach alert";
                                 config.number = number;
