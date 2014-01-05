@@ -1,4 +1,4 @@
-var fidelitas = angular.module("fidelitas", ['ngTouch']);
+var fidelitas = angular.module("fidelitas", ['ngTouch', 'ngRoute']);
 
 fidelitas.config(['$routeProvider',
   function($routeProvider) {
