@@ -4,6 +4,10 @@ fidelitas.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/', {
+        templateUrl: 'partials/test.tmpl.html',
+        controller: 'TestCtrl'
+      }).
+      when('/fidelitas', {
         templateUrl: 'partials/tag.tmpl.html',
         controller: 'FidelitasCtrl'
       }).
