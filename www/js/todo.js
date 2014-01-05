@@ -95,7 +95,7 @@ fidelitas.factory('config', function() {
 /**
  * Factory tagreader
  * TODO refactoring
- */
+ */ /*
 fidelitas.factory('tagreader', function ($rootScope, $location, $window, config, cordovaReady, $http) {
     // TODO factoring ziel für fmt
 
@@ -137,7 +137,7 @@ fidelitas.factory('tagreader', function ($rootScope, $location, $window, config,
                      }, tagreader.errorHandler);
 
                      }, tagreader.errorHandler);
-                     */
+                     
                 },
                 tagreader.errorHandler);
 
@@ -197,8 +197,8 @@ fidelitas.factory('tagreader', function ($rootScope, $location, $window, config,
         datname: "xx.txt",
         hallo: "Hallo"
     };
-    return tagreader;
-});
+    return tagreader; 
+});*/
 
 
 

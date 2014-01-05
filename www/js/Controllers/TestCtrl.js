@@ -12,7 +12,7 @@ fidelitas.controller("TestCtrl", function($scope, $http){
         
         $http({
             method: 'POST',
-            url: "http://nfcserver-hrd.appspot.com/tag1",
+            url: "http://nfcserver-hrd.appspot.com/tag",
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             transformRequest: function (obj) {
                 var str = [];
