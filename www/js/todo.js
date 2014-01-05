@@ -146,7 +146,6 @@ fidelitas.factory('tagreader', function ($rootScope, $window, config, cordovaRea
                                 method: 'POST',
                                 url: config.serveradress + "/tag",
                                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                                // TODO hier function umwickeln
                                 transformRequest: function (obj) {
                                     var str = [];
                                     for (var p in obj)
