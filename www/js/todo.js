@@ -108,7 +108,8 @@ fidelitas.factory('tagreader', function ($rootScope, $location, $window, config,
                 nfc.addNdefListener(
                     function (nfcEvent) {
                         //var tsr = fmt.format(new Date());
-                        alert("alert ");
+                        //alert("alert ");
+                        // der alert führt zu einem refresh
                         var type, number, postdata;
                         var tag = nfcEvent.tag,
                             ndefMessage = tag.ndefMessage;
