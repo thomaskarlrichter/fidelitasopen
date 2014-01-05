@@ -3,12 +3,13 @@ fidelitas.controller("TestCtrl", function($scope, $http){
     $scope.nr = "Bla";
     $scope.ty = "Type";
     $scope.time = "12.23.23";
-    $scope.click = function(){
+    $scope.click = function($scope, $http){
         var postdata = {
             "nr": $scope.nr,
             "ty": $scope.ty,
             "time": $scope.time
         };
+        
         $http({
             method: 'POST',
             url: "http://nfcserver-hrd.appspot.com/tag1",
