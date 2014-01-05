@@ -1,13 +1,7 @@
 fidelitas.controller("FidelitasCtrl", function ($scope, $rootScope, 
                                                 $window, $location, 
-                                                $timeout, tagreader, config) {
+                                                $timeout, config) {
     $scope.config = config;
-    tagreader.getNfc(function () {
-                        $scope.config.ty = "SU";
-                    },
-                    function () {
-                        $scope.config.ty = "ER";
-                    });
     $scope.onTimeout = function() {
         var date = new Date();
         $scope.time = date.getHours()+":"+("0"+date.getMinutes()).slice(-2)+":"+("0"+date.getSeconds()).slice(-2);
@@ -31,6 +25,6 @@ fidelitas.controller("FidelitasCtrl", function ($scope, $rootScope,
     };
     $scope.leseFile = function () {
         $scope.config.working = !$scope.config.working;
-        tagreader.readAllTags();
+        // TODO refactor tagreader.readAllTags();
     };
 });
