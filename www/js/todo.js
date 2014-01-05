@@ -1,4 +1,3 @@
-/*jslint browser: true */
 /**
  * Created by thomasrichter on 14.10.13.
  */
@@ -6,8 +5,6 @@
 
 console.log("######### todo loaded");
 
-// TODO vergleiche mit factory config
-var serveradress = "http://nfcserver-hrd.appspot.com";
 //var serveradress = "http://192.168.78.31:10083";
 window.requestFileSystem = window.requestFileSystem ||
                            window.webkitRequestFileSystem;
@@ -18,11 +15,11 @@ function DateFmt(fstr) {
 
     var zeroPad = function (number) {
         return ("0" + number).substr(-2, 2);
-    }
+    };
 
     var dateMarkers = {
         d: ['getDate', function (v) {
-            return zeroPad(v)
+            return zeroPad(v);
         }],
         m: ['getMonth', function (v) {
             return zeroPad(v + 1);
