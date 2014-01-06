@@ -17,7 +17,7 @@
     
     <content src="index.html" />
     <icon src="logo.png" />
-    <access origin="*" />
+    <access origin="http://nfcserver-hrd.appspot.com" />
     
     <gap:platform name="android" />
     <gap:plugin name="com.chariotsolutions.nfc.plugin" />
