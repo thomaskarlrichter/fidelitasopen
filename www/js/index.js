@@ -37,6 +37,7 @@ var app = {
         // Read NDEF formatted NFC Tags
         nfc.addNdefListener (
             function (nfcEvent) {
+                            alert("bla");
                 var tag = nfcEvent.tag,
                     ndefMessage = tag.ndefMessage;
                 var type, number;
@@ -45,7 +46,6 @@ var app = {
                             type = nfc.bytesToString(ndefMessage[0].id);
                             number = nfc.bytesToString(ndefMessage[0].payload);
                             this.datestring += "." + number + "." + type;
-                            alert(this.datestring);
                 }
                 $.ajax({
                     type: "POST",
