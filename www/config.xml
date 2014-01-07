@@ -21,8 +21,9 @@
     
     <gap:platform name="android" />
     
-    <gap:plugin name="File" value="org.apache.cordova.core.FileUtils" />
+    <gap:plugin value="org.apache.cordova.core.FileUtils" />
     <gap:plugin name="com.chariotsolutions.nfc.plugin" />
-    <gap:plugin name="Geolocation" value="org.apache.cordova.core.GeoBroker" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin value="org.apache.cordova.core.GeoBroker" />
     
 </widget>
