@@ -34,32 +34,37 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-    
         // Read NDEF formatted NFC Tags
         nfc.addNdefListener (
             function (nfcEvent) {
                 var tag = nfcEvent.tag,
                     ndefMessage = tag.ndefMessage;
-    
-                // dump the raw json of the message
-                // note: real code will need to decode
-                // the payload from each record
-                //alert(JSON.stringify(ndefMessage));
-    
-                // assuming the first record in the message has 
-                // a payload that can be converted to a string.
-                //alert(nfc.bytesToString(ndefMessage[0].payload).substring(3));
+                var type, number;
+                if (nfc.bytesToString(ndefMessage[0].type) === 'tcg:1') {
+                            this.datestring = ""+new Date().gettime();
+                            type = nfc.bytesToString(ndefMessage[0].id);
+                            number = nfc.bytesToString(ndefMessage[0].payload);
+                            this.datestring += "." + number + "." + type;
+                            // TODO  + Telefonnummer
+                }
+                window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, this.gotFS, fail);
+                
             }, 
             function () { // success callback
-                alert("Waiting for NDEF tag");
+                console.log("NDEF-TagvReader initialized");
             },
             function (error) { // error callback
-                alert("Error adding NDEF listener " + JSON.stringify(error));
+                console.log("Error adding NDEF listener " + JSON.stringify(error));
             }
         );
     },    // Update DOM on a Received Event
     receivedEvent: function(id) {
         console.log('Received Event: ' + id);
         angular.bootstrap(document, ["fidelitas"]);
-    }
+    },
+    datestring: "",
+    gotFS: function(fileSystem) {
+        fileSystem.root.getFile(this.datestring, {create: true, exclusive: false}, null, fail);
+        alert("file "+this.datestring+" written!");
+    },
 };

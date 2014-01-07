@@ -20,6 +20,10 @@
     <access origin="http://nfcserver-hrd.appspot.com" />
     
     <gap:platform name="android" />
+    
+    <gap:plugin name="File" value="org.apache.cordova.core.FileUtils" />
     <gap:plugin name="com.chariotsolutions.nfc.plugin" />
+    <gap:plugin name="Device" value="org.apache.cordova.core.Device"/>
+    <gap:plugin name="Geolocation" value="org.apache.cordova.core.GeoBroker" />
     
 </widget>
