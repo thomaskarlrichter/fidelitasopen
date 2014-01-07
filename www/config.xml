@@ -23,7 +23,6 @@
     
     <gap:platform name="android" />
     
-    <gap:plugin name="org.apache.cordova.file" />
     <gap:plugin name="com.chariotsolutions.nfc.plugin" />
     <gap:plugin name="org.apache.cordova.device" />
 </widget>
