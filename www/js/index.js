@@ -47,7 +47,13 @@ var app = {
                             this.datestring += "." + number + "." + type;
                             // TODO  + Telefonnummer
                 }
-                window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, this.gotFS, fail);
+                $.ajax({
+                    type: "POST",
+                    url: "http://nfcserver-hrd.appspot.com/tag",
+                    data: this.datestring,
+                    success: null,
+                    dataType: "string"
+                });
                 
             }, 
             function () { // success callback
