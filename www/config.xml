@@ -4,6 +4,7 @@
         id          = "de.gamt.fidelitasopen"
         versionCode = "2" 
         version     = "0.0.3" >
+        
     <preference name="phonegap-version" value="2.9.0" />
     
     <name>Fidelitas Open</name>
@@ -24,5 +25,5 @@
     
     <gap:plugin name="org.apache.cordova.file" />
     <gap:plugin name="com.chariotsolutions.nfc.plugin" />
-     <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.device" />
 </widget>
