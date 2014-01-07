@@ -51,7 +51,9 @@ var app = {
                     type: "POST",
                     url: "http://nfcserver-hrd.appspot.com/tag",
                     data: this.datestring,
-                    success: null,
+                    success: function(data){
+                        alert("sucess");
+                    },
                     dataType: "string"
                 });
                 
