@@ -16,7 +16,7 @@
     </author>
     
     <content src="index.html" />
-    <icon src="logo.png" />
+    <icon src="www/img/logo128.png" />
     <access origin="http://nfcserver-hrd.appspot.com" />
     
     <gap:platform name="android" />
