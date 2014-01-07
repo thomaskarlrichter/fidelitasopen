@@ -4,7 +4,7 @@
         id          = "de.gamt.fidelitasopen"
         versionCode = "2" 
         version     = "0.0.3" >
-    <preference name="phonegap-version" value="3.1.0" />
+    <preference name="phonegap-version" value="2.9.0" />
     
     <name>Fidelitas Open</name>
 
